@@ -44,7 +44,9 @@ public class Player : MonoBehaviour
             // 押し戻し
         }
         if(y < GetBottom()){
-
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.AddForce(new Vector2(0,JUMP_VELOCITY));
+            position.y = GetBottom();
         }
         transform.position = position;
     }
