@@ -231,10 +231,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2047106492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ede2c31f5974cefbf9bea553a1534a, type: 3}
+  m_Script: {fileID: 11500000, guid: 51ce30e12b1ad984da437259c2c8177a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 298884850245727112, guid: bb15f25e8232b4c3aaf8d89e231660de, type: 3}
+  block: {fileID: 298884850245727112, guid: c1002c92b387d0f4b93ef2b0677e14cc, type: 3}
 --- !u!212 &2047106494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a10df66c4b164017964c5e602781e66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 418d7c4d65f80476c9181a089b684399, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
