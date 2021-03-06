@@ -9,14 +9,19 @@ public class Player : MonoBehaviour
     float JUMP_VELOCITY = 1000;
     //JUMP_VELOCITYという変数を用意
 
+    public GameObject gameMng; // ①ゲーム管理
+
     Rigidbody2D _rigidbody;
     //物理挙動コンポーネント。Rigidbody2Dを保持する変数の定義。コンポーネントを取得する関数は処理が重いので、あらかじめ保持しておくと良い
+    GameMng _gameMng; // ②ゲーム管理スクリプト
 
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         //スタート時に、上の物理挙動コンポーネントを取得する
+
+        _gameMng = gameMng.GetComponent<GameMng>();
     }
 
     // Update is called once per frame
@@ -58,4 +63,14 @@ public class Player : MonoBehaviour
         Vector2 min = Camera.main.ViewportToWorldPoint(Vector2.zero);
         return min.y;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+
+        // ④ゲームオーバーを通知
+    _gameMng.StartGameOver();
+    
+    // 衝突したので消滅
+    Destroy(gameObject);
+    
+   }
 }
