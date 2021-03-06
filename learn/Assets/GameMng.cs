@@ -49,7 +49,7 @@ public class GameMng : MonoBehaviour {
             // ②リトライボタンの描画
             if(_DrawRetryButton(CenterX, CenterY)) {
                 // ③クリックしたらやり直しする
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("naruse01");
             }
         }
     }  
