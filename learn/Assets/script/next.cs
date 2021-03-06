@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class start : MonoBehaviour
+public class next : MonoBehaviour
 {
 
     //ボタンを押した時の処理
     public void PushButton()
     {
-        SceneManager.LoadScene("Scenes/naruse01");
+        SceneManager.LoadScene("Scenes/ranking");
     }
 
     // Start is called before the first frame update
