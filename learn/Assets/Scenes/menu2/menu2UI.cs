@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class menu2UI : MonoBehaviour
 {
-    public void ChangeScene2Game()
+    public void ChangeScene2Sample()
     {
         SceneManager.LoadScene("Scenes/SampleScene");
+    }
+    public void ChangeScene2Game()
+    {
+        SceneManager.LoadScene("naruse01");
     }
 }
