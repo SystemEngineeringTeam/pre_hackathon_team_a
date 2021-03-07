@@ -60,7 +60,7 @@ public class BlockMng : MonoBehaviour
             _set = 0;
         }
 
-        if(_cnt%10 == 0 && _set==0){
+        if(_cnt%20 == 0 && _set==0){    //SETの生成
             Vector3 position_set = transform.position;
             if(_ud==0){
                 position_set.y = Random.Range(0, 4);

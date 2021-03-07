@@ -32,4 +32,11 @@ public class set : MonoBehaviour
     public void SetSpeed(float speed){
         _speed = speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.tag == "Player"){
+            // 衝突したので消滅
+            Destroy(gameObject);
+        }
+    }
 }

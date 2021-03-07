@@ -14,7 +14,7 @@ public class GameMng : MonoBehaviour {
 
 
     int _score = 0;
-    public int _point = 0;
+    int _point = 0;
     //スコア
     public int getScore(){
         return _score;
@@ -27,7 +27,9 @@ public class GameMng : MonoBehaviour {
         _state = State.GameOver;
     }
 
-    public
+    public void GetPoint(){ //pointを加算する
+        _point++;
+    }
 
     void Start() {
     }
@@ -93,6 +95,7 @@ public class GameMng : MonoBehaviour {
         GUI.Label(position, string.Format("score:{0}", _score));
     }
 
+    //pointの描画
     void _DrawPoint(){
         GUI.skin.label.fontSize = 32;
         // 左揃え
