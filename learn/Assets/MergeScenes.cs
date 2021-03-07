@@ -9,6 +9,7 @@ public class MergeScenes : MonoBehaviour
     {
         Application.LoadLevelAdditive("Scenes/Player");
         Application.LoadLevelAdditive("Scenes/ranking");
+        Application.LoadLevelAdditive("Scenes/rankingMenu");
     }
 
     // Update is called once per frame
