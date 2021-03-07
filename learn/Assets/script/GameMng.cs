@@ -15,7 +15,9 @@ public class GameMng : MonoBehaviour {
 
     int _score = 0;
     //スコア
-
+    public int getScore(){
+        return _score;
+    }
     State _state = State.Main;
     //スコア
 
