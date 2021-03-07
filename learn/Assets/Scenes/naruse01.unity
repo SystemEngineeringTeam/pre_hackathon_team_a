@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 298884850245727112, guid: c1002c92b387d0f4b93ef2b0677e14cc, type: 3}
+  gamemng: {fileID: 1081411168}
 --- !u!212 &2047106494
 SpriteRenderer:
   m_ObjectHideFlags: 0

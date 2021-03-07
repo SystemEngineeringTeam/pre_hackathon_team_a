@@ -5,9 +5,12 @@ using UnityEngine;
 public class BlockMng : MonoBehaviour
 {
     public GameObject block;
+    //public GameObject gamemng;
     float _timer = 0; //_timerの初期化
     float _totalTime = 0;
+   // GameMng scores;
     int _cnt = 0;
+    int _ud = 0; //ブロックが上に生成された->0 下に生成された->1
     void Start()
     {
         
@@ -23,22 +26,31 @@ public class BlockMng : MonoBehaviour
         if(_timer < 0){
             Vector3 position = transform.position;
             //BlockMngから生成
-            position.y = Random.Range(-4, 4);
+            if(_ud == 0){    //ブロックを下に生成する
+                position.y = Random.Range(-4, 0);
+                _ud = 1;
+            }else{      //ブロックを上に生成する
+                position.y = Random.Range(0, 4);
+                _ud = 0;
+            }
+
             GameObject obj = Instantiate(block, position, Quaternion.identity);
             //Instatiate[オブジェクトの生成](コピーする既存obj, 位置, 向き) Quaternion.identity -> 回転しない
             block blockScript = obj.GetComponent<block>();
-            
+
             float speed = 100 + (_totalTime * 10);
             blockScript.SetSpeed(-speed);
 
+            //scores = gamemng.GetComponent<GameMng>();
+            //int score = scores._score;
+
             _cnt++;
-            if(_cnt%10 < 3){
+            if(_cnt%3 == 0){
                 _timer += 0.1f;
+                
             }else{
                 _timer += 1;
             }
-
-            _timer += 1;
         }
     }
 }
