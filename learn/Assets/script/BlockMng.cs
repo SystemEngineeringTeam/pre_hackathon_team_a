@@ -5,10 +5,10 @@ using UnityEngine;
 public class BlockMng : MonoBehaviour
 {
     public GameObject block;
-    //public GameObject gamemng;
+    public GameObject gamemng;
     float _timer = 0; //_timerの初期化
     float _totalTime = 0;
-   // GameMng scores;
+   　GameMng scores;
     int _cnt = 0;
     int _ud = 0; //ブロックが上に生成された->0 下に生成された->1
     void Start()
@@ -27,10 +27,10 @@ public class BlockMng : MonoBehaviour
             Vector3 position = transform.position;
             //BlockMngから生成
             if(_ud == 0){    //ブロックを下に生成する
-                position.y = Random.Range(-4, 0);
+                position.y = Random.Range(-6, 0);
                 _ud = 1;
             }else{      //ブロックを上に生成する
-                position.y = Random.Range(0, 4);
+                position.y = Random.Range(0, 6);
                 _ud = 0;
             }
 
@@ -41,15 +41,19 @@ public class BlockMng : MonoBehaviour
             float speed = 100 + (_totalTime * 10);
             blockScript.SetSpeed(-speed);
 
-            //scores = gamemng.GetComponent<GameMng>();
-            //int score = scores._score;
+            scores = gamemng.GetComponent<GameMng>();
+            int score = scores.getScore();
 
             _cnt++;
-            if(_cnt%3 == 0){
+            if(_cnt%3 == 0 && score > 500 && score <1000){
                 _timer += 0.1f;
-                
+            }else if(_cnt%3 == 0 && score >= 1000){
+                _timer += 0.1f;
             }else{
                 _timer += 1;
+                if(score > 1000){
+                    _timer -= 0.5f;
+                }
             }
         }
     }
