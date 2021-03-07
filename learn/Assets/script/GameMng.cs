@@ -24,6 +24,7 @@ public class GameMng : MonoBehaviour {
     // ゲームオーバーの開始
     public void StartGameOver() {
         _state = State.GameOver;
+        private int[] highScore =  new int[5];
     }
 
     void Start() {
