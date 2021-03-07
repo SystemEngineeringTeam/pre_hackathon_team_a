@@ -14,6 +14,7 @@ public class GameMng : MonoBehaviour {
 
 
     int _score = 0;
+    public int _point = 0;
     //スコア
     public int getScore(){
         return _score;
@@ -25,6 +26,8 @@ public class GameMng : MonoBehaviour {
     public void StartGameOver() {
         _state = State.GameOver;
     }
+
+    public
 
     void Start() {
     }
@@ -41,6 +44,7 @@ public class GameMng : MonoBehaviour {
     private void OnGUI() {
         // スコアの描画
         _DrawScore();
+        _DrawPoint();
 
         // 画面の中心座標を計算する
         float CenterX = Screen.width / 2;
@@ -87,5 +91,13 @@ public class GameMng : MonoBehaviour {
         GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         Rect position = new Rect(8, 8, 400, 100);
         GUI.Label(position, string.Format("score:{0}", _score));
+    }
+
+    void _DrawPoint(){
+        GUI.skin.label.fontSize = 32;
+        // 左揃え
+        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+        Rect position = new Rect(8, -20, 400, 100);
+        GUI.Label(position, string.Format("point:{0}", _point));
     }
 }

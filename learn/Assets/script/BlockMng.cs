@@ -5,12 +5,14 @@ using UnityEngine;
 public class BlockMng : MonoBehaviour
 {
     public GameObject block;
+    public GameObject set;
     public GameObject gamemng;
     float _timer = 0; //_timerの初期化
     float _totalTime = 0;
    　GameMng scores;
     int _cnt = 0;
     int _ud = 0; //ブロックが上に生成された->0 下に生成された->1
+    int _set = 0;
     void Start()
     {
         
@@ -55,6 +57,20 @@ public class BlockMng : MonoBehaviour
                     _timer -= 0.5f;
                 }
             }
+            _set = 0;
+        }
+
+        if(_cnt%10 == 0 && _set==0){
+            Vector3 position_set = transform.position;
+            if(_ud==0){
+                position_set.y = Random.Range(0, 4);
+            }else{
+                position_set.y = Random.Range(-4, 0);
+            }
+            GameObject Set = Instantiate(set, position_set, Quaternion.identity);
+            set setscript = Set.GetComponent<set>();
+            float speed = 100 + (_totalTime * 10);
+            _set++;
         }
     }
 }
