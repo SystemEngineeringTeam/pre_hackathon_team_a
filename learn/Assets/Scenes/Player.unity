@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd56ff01516981a43b9ce70e094c7d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JUMP_VELOCITY: 450
+  JUMP_VELOCITY: 370
   gameMng: {fileID: 144267550507825175, guid: 57c8e69f582494bfbbc2bc4452848df0, type: 3}
 --- !u!58 &404451750
 CircleCollider2D:
@@ -255,7 +255,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.695
+  m_Radius: 4
 --- !u!1 &864541707
 GameObject:
   m_ObjectHideFlags: 0
