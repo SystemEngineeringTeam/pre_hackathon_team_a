@@ -7,7 +7,9 @@ public class MergeScenes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.LoadLevelAdditive("Player");
+        Application.LoadLevelAdditive("Scenes/Player");
+        Application.LoadLevelAdditive("Scenes/ranking");
+        Application.LoadLevelAdditive("Scenes/rankingMenu");
     }
 
     // Update is called once per frame

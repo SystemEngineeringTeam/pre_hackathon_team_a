@@ -18,14 +18,21 @@ public class GameMng : MonoBehaviour {
     public GUISkin customSkin;　//GUISkinを格納
 
     int _score = 0;
+    int _point = 0;
     //スコア
-
+    public int getScore(){
+        return _score;
+    }
     State _state = State.Main;
     //スコア
 
     // ゲームオーバーの開始
     public void StartGameOver() {
         _state = State.GameOver;
+    }
+
+    public void GetPoint(){ //pointを加算する
+        _point++;
     }
 
     void Start() {
@@ -43,6 +50,7 @@ public class GameMng : MonoBehaviour {
     private void OnGUI() {
         // スコアの描画
         _DrawScore();
+        _DrawPoint();
 
         GUI.skin = customSkin;　//GUISkinを呼び出し
 
@@ -111,5 +119,14 @@ public class GameMng : MonoBehaviour {
         GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         Rect position = new Rect(8, 8, 400, 100);
         GUI.Label(position, string.Format("score:{0}", _score));
+    }
+
+    //pointの描画
+    void _DrawPoint(){
+        GUI.skin.label.fontSize = 32;
+        // 左揃え
+        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+        Rect position = new Rect(8, -20, 400, 100);
+        GUI.Label(position, string.Format("point:{0}", _point));
     }
 }

@@ -69,12 +69,13 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-
         // ④ゲームオーバーを通知
-    _gameMng.StartGameOver();
-
-    // 衝突したので消滅
-    Destroy(gameObject);
-    
-   }
+        if(collision.tag == "dead"){    //deadタグを持つblockと衝突 
+            _gameMng.StartGameOver();
+            // 衝突したので消滅
+            Destroy(gameObject);
+        }else if(collision.tag == "addpoint"){  //addpointタグを持つsetと衝突
+            _gameMng.GetPoint();
+        }
+    }
 }
